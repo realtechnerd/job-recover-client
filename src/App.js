@@ -4,6 +4,7 @@ import ErrorPage from "./views/ErrorPage";
 import Home from "./views/Home";
 import { ApolloProvider } from "@apollo/client";
 import Client from "./ApolloProvider";
+import "./css/Form.css";
 function App() {
 	return (
 		<ApolloProvider client={Client}>

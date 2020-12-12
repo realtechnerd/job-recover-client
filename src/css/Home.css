@@ -1,0 +1,8 @@
+.loader {
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
+}
+.loader-parent {
+	width: 100%;
+}

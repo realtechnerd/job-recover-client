@@ -3,14 +3,10 @@ query queryPosts {
 		id
 		title
 		description
-		url
 		companyName
-		address {
-			street
-			city
-			state
-			country
-			zipCode
-		}
+		street
+		city
+		state
+		zipCode
 	}
 }
