@@ -76,3 +76,16 @@ img.down-arrow {
 	/* border: none; */
 	box-shadow: 0 0 0 0.15rem rgba(116, 26, 219, 0.25);
 }
+.errorpage {
+	padding: 50px;
+	text-align: center;	
+}
+.errorpage img {
+	width: 150px;
+	margin-bottom: 15px;
+	border-radius: 50%;
+}
+
+.fs-45 {
+	font-size: 40px !important;
+}

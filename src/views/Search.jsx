@@ -14,11 +14,16 @@ const Search = ({posts}) => {
       location:url.searchParams.get('location')
     }
   })
+  const titleInput = url.searchParams.get('title');
+  const locationInput = url.searchParams.get('location');
+  let resultsTitle = titleInput === "" ? `"${locationInput}"` : (locationInput === "" ? `"${titleInput}"` : `"${titleInput}" & "${locationInput}"`);
   return (
     <>
       <Header />
       <div className="container">
       <div style={{marginTop:100}}>
+        {data &&
+         (<h3 style={{marginBottom: "20px"}}>Your search <strong>{resultsTitle}</strong> returned <strong>{data.searchPosts.length}</strong> result{data.searchPosts.length !== 1 && "s"  }{data.searchPosts.length === 0 ? "." : ":"}</h3>)}
          {loading ? (
 						<div className="loader-parent">
 							<img

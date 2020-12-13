@@ -64,7 +64,8 @@ function Form(props) {
 		createPost();
 	};
 	return (
-		<Modal size="lg" show={props.show} onHide={e => props.setShow(false)}>
+		<Modal size="lg" show={props.show} className="glass" onHide={e => props.setShow(false)}>
+			<div className="glass">
 			<FormC onSubmit={handleSubmit}>
 					<Modal.Header closeButton>
 						<Modal.Title>Add a Job Listing</Modal.Title>
@@ -176,19 +177,12 @@ function Form(props) {
 		</div>
 					</Modal.Body>
 					<Modal.Footer>
-						<button type="submit" className="lit-btn" onClick={e => props.setShow(false)}>
-					{loading ? (
-						<img
-							src={loaderSVG}
-							alt="Loading..."
-							className="form_loader"
-						/>
-					) : (
-						"Create Listing"
-					)}
-				</button>
+						<button type="submit" className={loading ? "lit-btn loading-btn" : "lit-btn"} onClick={e => props.setShow(false)}>
+							Create Listing
+						</button>
 					</Modal.Footer>
 					</FormC>
+					</div>
 				</Modal>
 		
 	);

@@ -6,6 +6,7 @@ import Search from './views/Search'
 import { ApolloProvider } from "@apollo/client";
 import Client from "./ApolloProvider";
 import "./css/Form.css";
+
 function App() {
 	return (
 		<ApolloProvider client={Client}>
@@ -13,7 +14,7 @@ function App() {
 				<Switch>
 					<Route path="/" exact component={Home} />
 					<Route path="/error" exact component={ErrorPage} />
-					<Route paht='/search' exact component={Search}/>
+					<Route path='/search' exact component={Search}/>
 					<Route>
 						<Redirect to="/error" />
 					</Route>

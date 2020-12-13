@@ -28,41 +28,40 @@ function Header() {
 		
 	}
 	
-	const handleSubmit = () => {
-		history.push(`search?location=${input.location}&title=${input.title}`)
+	const handleSubmit = (e) => {
+		
+		if (input.location.length !== 0 || input.title.length !== 0)  {
+			history.push(`search?location=${input.location}&title=${input.title}`);
+		} else {
+			e.preventDefault();
+		}
 	}
 
 	return (
 		<div className="header">
-			<Link to="/">
-				<img
-					src={logo}
-					alt="JobRecover Logo"
-					className="header__logo"
-				/>
-			</Link>
-			<div className="header__searchbar">
-				<form onSubmit={handleSubmit}>
-					<div className="row">
-
-						<div className="col-sm">
-							<div className='search'>
-								<SearchIcon />
-								{/* <input type="text" name="title" className="search_input" value={input.title} onChange={handleChange} placeholder="Dream job title..." /> */}
-								<TextField className="text-input" placeholder="Dream job title..." name="title" value={input.title} onChange={handleChange} />
-							</div>
-							<div className='search'>
-								<LocationOnIcon />
-								{/* <input type="text" name="location" className="search_input" value={input.location} onChange={handleChange} placeholder="Where do you want to work?" /> */}
-								<TextField name="location" value={input.location} onChange={handleChange} className="text-input" placeholder="Where do you want to work?" />
-							</div>
-						</div>
-					</div>
-					<button type="submit" className="submit_search d-inline">
-						<SearchIcon />
-					</button>
-				</form>
-			</div>
+			<form onSubmit={handleSubmit}  className="header__searchbar row">
+				<Link to="/">
+					<img
+						src={logo}
+						alt="JobRecover Logo"
+						className="header__logo"
+					/>
+				</Link>
+				<div className='search col'>
+					<SearchIcon className='search-icon' />
+					{/* <input type="text" name="title" className="search_input" value={input.title} onChange={handleChange} placeholder="Dream job title..." /> */}
+					<TextField fullWidth={true} className="text-input" placeholder="Dream job..." name="title" value={input.title} onChange={handleChange} />
+				</div>
+				<div className='search col'>
+					<LocationOnIcon className='search-icon' />
+					{/* <input type="text" name="location" className="search_input" value={input.location} onChange={handleChange} placeholder="Where do you want to work?" /> */}
+					<TextField fullWidth={true} name="location" value={input.location} onChange={handleChange} className="text-input" placeholder="Where do you want to work?" />
+				</div>
+				<button type="submit" className="submit-btn">
+					{/* <SearchIcon /> */}
+					Search
+				</button>
+			</form>
 		</div>
 	);
 }
