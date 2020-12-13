@@ -6,3 +6,60 @@
 .loader-parent {
 	width: 100%;
 }
+.blue-btn {
+	box-shadow: 0px 3px 4px 0px rgba(140, 82, 253, 0.9);
+}
+
+.landing, .purple {
+	color: #8c52fd;
+	font-weight: bolder;
+	font-size: 10vw;
+}
+
+.landing, .title {
+	font-size: 8vw;
+	color: black;
+}
+
+.landing {
+	text-align: center;
+	height: calc(100vh - 70px);
+	align-items: center;
+	justify-content: center;
+	padding-top: 3rem;
+}
+
+.landing-img {
+	width: 12vw;
+	height: auto;
+	margin-right: 10px;
+	margin-left: 10px;
+	transform: translateY(-10px);
+}
+
+.subtitle {
+	font-size: 1.5rem;
+}
+.bounce {
+    -moz-animation: bounce 2s infinite;
+    -webkit-animation: bounce 2s infinite;
+    animation: bounce 2s infinite;
+  }
+img.down-arrow {
+	height: 1rem;
+	cursor: pointer;
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-10px);
+    }
+    60% {
+      transform: translateY(-10px);
+    }
+  }
+@media only screen and (max-width: 600px) {
+	/* phone responsive code goes here*/
+}

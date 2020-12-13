@@ -2,11 +2,14 @@ query queryPosts {
 	queryPosts {
 		id
 		title
+		url
 		description
 		companyName
+		createdAt
 		street
 		city
 		state
+		country
 		zipCode
 	}
 }

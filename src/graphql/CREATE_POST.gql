@@ -21,5 +21,15 @@ mutation createPost(
 		zipCode: $zipCode
 	) {
 		id
+		title
+		description
+		url
+		companyName
+		createdAt
+		street
+		city
+		state
+		country
+		zipCode
 	}
 }

@@ -38,7 +38,9 @@ function Form(props) {
 			country: input.country,
 			zipCode: input.zipCode,
 		},
-		onCompleted() {},
+		onCompleted() {
+			props.refetch();
+		},
 		onError(err) {
 			console.log(err);
 		},
