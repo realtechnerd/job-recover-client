@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/job-recover-client/static/css/main.765b00c6.chunk.css",
+    "main.js": "/job-recover-client/static/js/main.611d37d5.chunk.js",
+    "main.js.map": "/job-recover-client/static/js/main.611d37d5.chunk.js.map",
+    "runtime-main.js": "/job-recover-client/static/js/runtime-main.fd7bf189.js",
+    "runtime-main.js.map": "/job-recover-client/static/js/runtime-main.fd7bf189.js.map",
+    "static/js/2.67c3d372.chunk.js": "/job-recover-client/static/js/2.67c3d372.chunk.js",
+    "static/js/2.67c3d372.chunk.js.map": "/job-recover-client/static/js/2.67c3d372.chunk.js.map",
+    "static/js/3.0b785b5c.chunk.js": "/job-recover-client/static/js/3.0b785b5c.chunk.js",
+    "static/js/3.0b785b5c.chunk.js.map": "/job-recover-client/static/js/3.0b785b5c.chunk.js.map",
+    "index.html": "/job-recover-client/index.html",
+    "static/css/main.765b00c6.chunk.css.map": "/job-recover-client/static/css/main.765b00c6.chunk.css.map",
+    "static/js/2.67c3d372.chunk.js.LICENSE.txt": "/job-recover-client/static/js/2.67c3d372.chunk.js.LICENSE.txt",
+    "static/media/404.6e17ecfd.png": "/job-recover-client/static/media/404.6e17ecfd.png",
+    "static/media/loader.844dd506.svg": "/job-recover-client/static/media/loader.844dd506.svg",
+    "static/media/logo.c9d9379b.png": "/job-recover-client/static/media/logo.c9d9379b.png",
+    "static/media/plusIcon.67d03d98.svg": "/job-recover-client/static/media/plusIcon.67d03d98.svg",
+    "static/media/suitcase.afa6ac0e.png": "/job-recover-client/static/media/suitcase.afa6ac0e.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fd7bf189.js",
+    "static/js/2.67c3d372.chunk.js",
+    "static/css/main.765b00c6.chunk.css",
+    "static/js/main.611d37d5.chunk.js"
+  ]
+}
