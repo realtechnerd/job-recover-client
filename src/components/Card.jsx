@@ -2,9 +2,6 @@ import React from "react";
 import "../css/Card.css";
 import moment from 'moment';
 function Card({ post }) {
-	if(post){
-		console.log(post)
-	}
 	return (
 		<>
 		<div className="card">
@@ -13,7 +10,7 @@ function Card({ post }) {
 					{post.title} @ {post.companyName}
 				</h3>
 				<h5>{post.description}</h5>
-				<p>
+				<p style={{marginBottom:40}}>
 					Address:
 					<br />
 					{post.companyName}
@@ -26,14 +23,15 @@ function Card({ post }) {
 					<br />
 				</p>
 				<a
-					className="lgbshockwave lb"
+					// className="button button-1 lb"
+					className='lit-btn lb'
 					href={post.url}
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					More information
+					View Listing
 				</a>
-				<p className='float-right mt-4'>Listed {moment.unix(post.createdAt/1000).fromNow()}</p> 
+				<p className='float-right mt-4 momentTime'>Listed {moment.unix(post.createdAt/1000).fromNow()}</p> 
 			</div>
 		</div>
 		</>

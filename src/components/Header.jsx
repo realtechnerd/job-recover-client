@@ -8,29 +8,30 @@ import TuneIcon from '@material-ui/icons/Tune';
 import {useHistory} from 'react-router-dom'
 import { Dropdown } from "react-bootstrap";
 import CheckIcon from '@material-ui/icons/Check';
+import {Row,Col} from 'react-bootstrap'
+import LocationOnIcon from '@material-ui/icons/LocationOn';
+import TextField from '@material-ui/core/TextField';
 
 function Header() {
 	const history = useHistory()
-	const [input, setInput] = useState('')
-	
-	const [choices, setChoices] = useState({
-		choice1:false,
-		choice2:false,
-		choice3:false
+	const [input, setInput] = useState({
+		location:"",
+		title:""
 	})
-
-	// console.log(props.posts)
+	
 	
 	const handleChange = e =>{
-		setInput(e.target.value)
-	}
-	const handleChoices = e =>{
-		setChoices(prev => ({
+		setInput(prev=>({
 			...prev,
-			[e.target.name]: !prev[e.target.name]
+			[e.target.name]: e.target.value
 		}))
+		
 	}
 	
+	const handleSubmit = () => {
+		history.push(`search?location=${input.location}&title=${input.title}`)
+	}
+
 	return (
 		<div className="header">
 			<Link to="/">
@@ -41,22 +42,27 @@ function Header() {
 				/>
 			</Link>
 			<div className="header__searchbar">
-				<input type="text" name="Search" className="search_input" value={input} onChange={handleChange} placeholder="Dream job..." />
-				<button type="submit" className="submit_search">
-					<SearchIcon />
-				</button>
-			</div>
-			<Dropdown>
-					<Dropdown.Toggle className="settings-btn" id="dropdown-settings">
-						<TuneIcon />	
-					</Dropdown.Toggle>
+				<form onSubmit={handleSubmit}>
+					<div className="row">
 
-					<Dropdown.Menu>
-						<Dropdown.Item name="choice1" value={choices.choice1}  onClick={handleChoices}>Job Title/Description {choices.choice1 && <CheckIcon />}</Dropdown.Item>
-						<Dropdown.Item name="choice2" value={choices.choice2} onClick={handleChoices}>Company {choices.choice2 && <CheckIcon />}</Dropdown.Item>
-						<Dropdown.Item name="choice3" value={choices.choice3} onClick={handleChoices}>Location {choices.choice3 && <CheckIcon />}</Dropdown.Item>
-					</Dropdown.Menu>
-				</Dropdown>
+						<div className="col-sm">
+							<div className='search'>
+								<SearchIcon />
+								{/* <input type="text" name="title" className="search_input" value={input.title} onChange={handleChange} placeholder="Dream job title..." /> */}
+								<TextField className="text-input" placeholder="Dream job title..." name="title" value={input.title} onChange={handleChange} />
+							</div>
+							<div className='search'>
+								<LocationOnIcon />
+								{/* <input type="text" name="location" className="search_input" value={input.location} onChange={handleChange} placeholder="Where do you want to work?" /> */}
+								<TextField name="location" value={input.location} onChange={handleChange} className="text-input" placeholder="Where do you want to work?" />
+							</div>
+						</div>
+					</div>
+					<button type="submit" className="submit_search d-inline">
+						<SearchIcon />
+					</button>
+				</form>
+			</div>
 		</div>
 	);
 }

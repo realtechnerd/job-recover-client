@@ -17,6 +17,7 @@ const Search = ({posts}) => {
   return (
     <>
       <Header />
+      <div className="container">
       <div style={{marginTop:100}}>
          {loading ? (
 						<div className="loader-parent">
@@ -32,7 +33,7 @@ const Search = ({posts}) => {
             ))
 					)}
       </div>
-     
+      </div>
     </>
   )
 }

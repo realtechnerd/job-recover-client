@@ -9,6 +9,7 @@
 .blue-btn {
 	box-shadow: 0px 3px 4px 0px rgba(140, 82, 253, 0.9);
 }
+.blue-btn
 
 .landing, .purple {
 	color: #8c52fd;
@@ -62,4 +63,16 @@ img.down-arrow {
   }
 @media only screen and (max-width: 600px) {
 	/* phone responsive code goes here*/
+}
+
+#footer{
+	padding: 20px;
+	margin-top: 30px;
+	margin-bottom: -100px;
+}
+
+.form-control:focus{
+	border-color: #8322f1;
+	/* border: none; */
+	box-shadow: 0 0 0 0.15rem rgba(116, 26, 219, 0.25);
 }

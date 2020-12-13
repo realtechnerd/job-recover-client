@@ -62,7 +62,6 @@ function Form(props) {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		createPost();
-		
 	};
 	return (
 		<Modal size="lg" show={props.show} onHide={e => props.setShow(false)}>
@@ -177,7 +176,7 @@ function Form(props) {
 		</div>
 					</Modal.Body>
 					<Modal.Footer>
-						<button type="submit" className="btn btn-primary" onClick={e => props.setShow(false)}>
+						<button type="submit" className="lit-btn" onClick={e => props.setShow(false)}>
 					{loading ? (
 						<img
 							src={loaderSVG}
