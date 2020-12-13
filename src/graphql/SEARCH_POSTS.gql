@@ -1,0 +1,15 @@
+query searchPosts($location: String, $title: String) {
+  searchPosts(location: $location, title: $title) {
+    id
+    title
+    description
+    url
+    companyName
+    street
+    city
+    state
+    country
+    createdAt
+    zipCode
+  }
+}

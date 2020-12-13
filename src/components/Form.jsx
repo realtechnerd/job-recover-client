@@ -1,11 +1,9 @@
 import { useState } from "react";
 import {
 	Form as FormC,
-	Label,
-	Control,
 	Row,
 	Col,
-	Group,
+	Modal
 } from "react-bootstrap";
 import { useMutation } from "@apollo/client";
 import { loader } from "graphql.macro";
@@ -39,10 +37,19 @@ function Form(props) {
 			zipCode: input.zipCode,
 		},
 		onCompleted() {
-			props.refetch();
-		},
-		onError(err) {
-			console.log(err);
+				props.refetch();
+				setInput({
+					title: "",
+					description: "",
+					url: "",
+					companyName: "",
+					street: "",
+					city: "",
+					state: "",
+					country: "",
+					zipCode: "",
+				})
+				props.setShow(false)
 		},
 	});
 	const handleChange = ({ target }) => {
@@ -54,12 +61,17 @@ function Form(props) {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		console.log({ input });
 		createPost();
+		
 	};
 	return (
-		<div className="listing-form">
+		<Modal size="lg" show={props.show} onHide={e => props.setShow(false)}>
 			<FormC onSubmit={handleSubmit}>
+					<Modal.Header closeButton>
+						<Modal.Title>Add a Job Listing</Modal.Title>
+					</Modal.Header>
+					<Modal.Body>
+						<div className="listing-form">
 				<div className="form-item">
 					<FormC.Label>Job Title</FormC.Label>
 					<FormC.Control
@@ -160,7 +172,12 @@ function Form(props) {
 						/>
 					</FormC.Group>
 				</Row>
-				<button type="submit" className="btn btn-primary">
+				
+			
+		</div>
+					</Modal.Body>
+					<Modal.Footer>
+						<button type="submit" className="btn btn-primary" onClick={e => props.setShow(false)}>
 					{loading ? (
 						<img
 							src={loaderSVG}
@@ -171,8 +188,10 @@ function Form(props) {
 						"Create Listing"
 					)}
 				</button>
-			</FormC>
-		</div>
+					</Modal.Footer>
+					</FormC>
+				</Modal>
+		
 	);
 }
 export default Form;

@@ -13,25 +13,27 @@ function Card({ post }) {
 					{post.title} @ {post.companyName}
 				</h3>
 				<h5>{post.description}</h5>
-				<h6>
+				<p>
+					Address:
+					<br />
+					{post.companyName}
+					<br />
 					{post.street},
 					<br />
-					{post.city}, {post.state}
-					<br />
-					{post.zipCode}
+					{post.city}, {post.state} {post.zipCode}
 					<br />
 					{post.country}
 					<br />
-				</h6>
+				</p>
 				<a
 					className="lgbshockwave lb"
 					href={post.url}
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					Visit Website
+					More information
 				</a>
-				<p>Listed {moment(post.createdAt).fromNow()}</p>
+				<p className='float-right mt-4'>Listed {moment.unix(post.createdAt/1000).fromNow()}</p> 
 			</div>
 		</div>
 		</>
